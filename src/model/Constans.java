@@ -30,8 +30,6 @@ public class Constans {
 		return aux;
 	}
 	
-	
-	
 	/**
 	 * searchString: Busca una cadena en la cadena por defecto, y hace un conteo de cuantas veces se encuentra ésta cadena
 	 * @param cadena
@@ -84,8 +82,6 @@ public class Constans {
 		String desencripter = String.valueOf(array1);
 		return desencripter;
 	}
-	
-	
 	
 	/**
 	 * fillCharacter: Concatena caracteres a la constante CONSTANTS, preguntando el tipo de caracter, el numero de veces y la direccion
@@ -143,9 +139,7 @@ public class Constans {
 		}
 		return repetida;
 	}
-	
-	
-	
+
 	/**
 	 * findDifference: Encuentra y elimina la diferencia entre la constante por defecto y una cadena parametrizada
 	 * @param cadena
@@ -234,9 +228,6 @@ public class Constans {
 				}
 			}
 		}
-	
-	
-	
 	/**
 	 * convertDate: Convierte un String a un tipo de dato de fecha
 	 * @param dateString
@@ -245,10 +236,8 @@ public class Constans {
 	public LocalDate convertDate(String dateString) {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		  LocalDate localDate = LocalDate.parse(dateString, formatter);
-		  return localDate;
-		
+		  return localDate;	
 	}
-	
 	
 	/**
 	 * getConstans: retorna CONSTANTS
@@ -257,5 +246,4 @@ public class Constans {
 	public static String getConstans() {
 		return CONSTANS;
 	}
-
 }

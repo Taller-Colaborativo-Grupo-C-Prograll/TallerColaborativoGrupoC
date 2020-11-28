@@ -167,11 +167,9 @@ public class Constans {
 	/**
 	 * deleteDirection: Elimina caracteres hasta que encuentre uno que no este en las dos cadenas, derecha o izquierda segun corresponda
 	 * 					1 si se empieza por la derecha o cualquier otro numero por la izquierda
-	 * @return  fraseII, CONSTANS modificada( sin los caracteres correspondientes)
 	 */
-	public void deleteDirection(String s, int b) {
+	public void deleteDirection(String cadena, int sentido) {
 		int con=0;
-		metodos me= new metodos(cadena);
 		boolean direccion;
 		String[]palabra=cadena.split("");
 		con=palabra.length;

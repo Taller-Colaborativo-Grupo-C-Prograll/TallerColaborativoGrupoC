@@ -68,7 +68,7 @@ public class Control {
 				view.showMessage(constant.findDifference(view.readString("Escribe la cadena")));
 				break;
 			case 9 : 
-				
+				constant.deleteDirection(view.readString("Escribe una cadena"), view.readInt("Escribe 1 para la derecha, o esccribe cualquier otro numero para la izquierda"));
 				break;
 			case 10:
 				view.showMessage(constant.convertDate(view.readString("Escribe la fecha de forma: dd/MM/yyyy" ))+"");

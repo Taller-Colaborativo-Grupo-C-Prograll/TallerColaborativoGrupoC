@@ -54,7 +54,36 @@ public class Constans {
 		return count;
 	}
 	
-	
+	/**
+	 * encripter: Esncripta una cadena
+	 * @param cadena
+	 * @return cadena encriptada
+	 */
+
+	public String encripter(String cadena) {
+		char array[] = cadena.toCharArray();
+		for (int i = 0; i < array.length; i++) {
+			array[i] = (char) (array[i] + (char) 7);
+		}
+
+		String encripter = String.valueOf(array);
+		return encripter;
+
+	}
+
+	/**
+	 * desencripter: Desencripta una cadena encriptada
+	 * @param cadena
+	 * @return cadena original
+	 */
+	public String desencripter(String cadena) {
+		char array1[] = cadena.toCharArray();
+		for (int j = 0; j < array1.length; j++) {
+			array1[j] = (char) (array1[j] - (char) 7);
+		}
+		String desencripter = String.valueOf(array1);
+		return desencripter;
+	}
 	
 	
 	

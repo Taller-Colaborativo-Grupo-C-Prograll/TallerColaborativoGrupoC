@@ -53,6 +53,31 @@ public class Constans {
 		}
 		return count;
 	}
+	
+	
+	
+	
+	
+	/**
+	 * fillCharacter: Concatena caracteres a la constante CONSTANTS, preguntando el tipo de caracter, el numero de veces y la direccion
+	 * @param character
+	 * @param number
+	 * @param rol
+	 * @return Constante con los caracteres concatenados
+	 */
+	public static String fillCharacters(char character, int number, boolean rol) {
+		String characters = "";
+		String aux = "";
+		for (int i = 0; i < number; i++) {
+			characters += character;
+		}
+		if (rol == true) {
+			aux = characters + CONSTANS;
+		} else {
+			aux = CONSTANS + characters;
+		}
+		return aux;
+	}
 	/**
 	 * deleteCharacter: Borrar caracter que entra por parametro, en la constante por defecto
 	 * @param caracter
@@ -64,6 +89,7 @@ public class Constans {
 		aux=CONSTANS.replaceAll(cara, "").replaceAll(cara.toLowerCase(), "");
 		return aux;
 	}
+	
 	/**
 	 * interseccion: Entre constante por defecto y cadena parametrizada
 	 * @param cadena
@@ -88,12 +114,39 @@ public class Constans {
 		}
 		return repetida;
 	}
+	
+	
+	
+	/**
+	 * findDifference: Encuentra y elimina la diferencia entre la constante por defecto y una cadena parametrizada
+	 * @param cadena
+	 * @return constante sin la diferencia con la cadena parametrizada
+	 */
+	public static String findDifference(String cadena) {
+		ArrayList<Character> gg = new ArrayList<>();
+		String aux = "";
+		for (int i = 0; i < CONSTANS.length(); i++) {
+			gg.add(i, CONSTANS.charAt(i));
+		}
+		for (int i = 0; i < cadena.length(); i++) {
+			for (int j = 0; j < gg.size(); j++) {
+				if (String.valueOf(cadena.charAt(i)).equalsIgnoreCase(String.valueOf(gg.get(j)))) {
+					gg.remove(j);
+				}
+			}
+		}
+		for (int i = 0; i < gg.size(); i++) {
+			aux += gg.get(i);
+		}
+		return aux;
+	}
+	
 	/**
 	 * deleteLeftRight: Elimina caracteres hasta que encuentre uno que no este en las dos cadenas, derecha o izquierda segun corresponda
 	 * 					1 si se empieza por la derecha o cualquier otro numero por la izquierda
 	 * @return  fraseII, CONSTANS modificada( sin los caracteres correspondientes)
 	 */
-	public void deleteLeftRight(String cadena, int sentido) {
+	public void deleteDirection(String s, int b) {
 		int con=0;
 		metodos me= new metodos(cadena);
 		boolean direccion;
@@ -155,7 +208,17 @@ public class Constans {
 	
 	
 	
-	
+	/**
+	 * convertDate: Convierte un String a un tipo de dato de fecha
+	 * @param dateString
+	 * @return LocalDate
+	 */
+	public LocalDate convertDate(String dateString) {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		  LocalDate localDate = LocalDate.parse(dateString, formatter);
+		  return localDate;
+		
+	}
 	
 	
 	/**
